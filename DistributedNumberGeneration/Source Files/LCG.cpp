@@ -24,68 +24,66 @@ LCG::LCG(LCG& other)
     m_startingPosition = other.m_startingPosition;
 }
 
-void LCG::WriteStreamToFile(int N, std::string filename) const
+void LCG::WriteStreamToFile(int N, string filename) const
 {
-    std::ofstream file(filename);
+    ofstream file(filename);
 
     if (!file.good())
     {
-        std::cout << "ERROR OPENING FILE: " << filename << std::endl;
+        cout << "ERROR OPENING FILE: " << filename << endl;
         return;
     }
 
     auto stream = GetNumberStream(N);
-    std::string data = "x_i,r_i\n";
+    string data = "";
 
     for(auto pair : stream)
 	{
-		data += std::to_string(pair.first) + "," + std::to_string(pair.second) + '\n';
+		data += to_string((pair.second + 1.0) / 2.0) + '\n';
 	}
 
 	file << data;
 	file.close();
 }
 
-void LCG::SetGenerationLag(int lag)
+void LCG::SetGenerationLag(int lag, int starting_position)
 {
-	m_N = lag;
+	m_lag = lag;
+    m_startingPosition = starting_position;
 }
 
 double LCG::GetNumber(int position) const
 {
     // use the number stream such that the last element is the number
     // the user asked for.
-    std::vector<std::pair<int, double>> stream = GetNumberStream(position + 1);
+    vector<pair<int, double>> stream = GetNumberStream(position + 1);
     return stream[position].second;
 }
 
-std::vector<std::pair<int, double>> LCG::GetNumberStream(int N) const
+vector<pair<int, double>> LCG::GetNumberStream(int N) const
 {
     int x = m_seed;
-    std::vector<std::pair<int, double>> stream;
+    vector<pair<int, double>> stream;
 
     if (m_lag < 0) {
         for (int i = 0; i < N; i++) {
             int current = (m_a * x + m_c) % m_m;
             double real_number = static_cast<double>(current) / m_m;
 
-            stream.push_back(std::make_pair(current, real_number));
+            stream.push_back(make_pair(current, real_number));
             x = current;   
         }
     }
     else {
-
         int new_N = N * m_lag;
 
-        // REPLACE i START WITH THE STARTING POSITION
-        for (int i = 0; i < new_N; i++) {
+        for (int i = m_startingPosition; i < new_N; i++) {
             
-            // ALSO REPLACE == CONDITION WITH STARTING POSITION
-            if (i % m_lag == 0) {
+            if (i % m_lag == m_startingPosition) {
 				int current = (m_a * x + m_c) % m_m;
 				double real_number = static_cast<double>(current) / m_m;
 
-				stream.push_back(std::make_pair(current, real_number));
+				stream.push_back(make_pair(current, real_number));
 				x = current;   
 			}
             else {
