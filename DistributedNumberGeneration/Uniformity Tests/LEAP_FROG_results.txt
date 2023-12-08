@@ -1,0 +1,24 @@
+Results for file: ./DistributedNumberGeneration/Output Files/LEAP_FROG_proc0_stream.txt 
+
+ 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 388.87, df = 49, p-value < 2.2e-16 
+ 	Asymptotic one-sample Kolmogorov-Smirnov test  data:  jittered_numbers D = 0.083252, p-value < 2.2e-16 alternative hypothesis: two-sided 
+--------------------------------------
+
+Results for file: ./DistributedNumberGeneration/Output Files/LEAP_FROG_proc1_stream.txt 
+
+ 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 365.47, df = 49, p-value < 2.2e-16 
+ 	Asymptotic one-sample Kolmogorov-Smirnov test  data:  jittered_numbers D = 0.07771, p-value = 3.331e-16 alternative hypothesis: two-sided 
+--------------------------------------
+
+Results for file: ./DistributedNumberGeneration/Output Files/LEAP_FROG_proc2_stream.txt 
+
+ 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 389.1, df = 49, p-value < 2.2e-16 
+ 	Asymptotic one-sample Kolmogorov-Smirnov test  data:  jittered_numbers D = 0.077728, p-value = 3.331e-16 alternative hypothesis: two-sided 
+--------------------------------------
+
+Results for file: ./DistributedNumberGeneration/Output Files/LEAP_FROG_proc3_stream.txt 
+
+ 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 421.6, df = 49, p-value < 2.2e-16 
+ 	Asymptotic one-sample Kolmogorov-Smirnov test  data:  jittered_numbers D = 0.085154, p-value < 2.2e-16 alternative hypothesis: two-sided 
+--------------------------------------
+

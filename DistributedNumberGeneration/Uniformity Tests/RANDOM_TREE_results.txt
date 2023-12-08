@@ -1,0 +1,24 @@
+Results for file: ./DistributedNumberGeneration/Output Files/RANDOM_TREE_proc0_stream.txt 
+
+ 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 430.3, df = 49, p-value < 2.2e-16 
+ 	Asymptotic one-sample Kolmogorov-Smirnov test  data:  jittered_numbers D = 0.085628, p-value < 2.2e-16 alternative hypothesis: two-sided 
+--------------------------------------
+
+Results for file: ./DistributedNumberGeneration/Output Files/RANDOM_TREE_proc1_stream.txt 
+
+ 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 430.87, df = 49, p-value < 2.2e-16 
+ 	Asymptotic one-sample Kolmogorov-Smirnov test  data:  jittered_numbers D = 0.085958, p-value < 2.2e-16 alternative hypothesis: two-sided 
+--------------------------------------
+
+Results for file: ./DistributedNumberGeneration/Output Files/RANDOM_TREE_proc2_stream.txt 
+
+ 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 430.47, df = 49, p-value < 2.2e-16 
+ 	Asymptotic one-sample Kolmogorov-Smirnov test  data:  jittered_numbers D = 0.085968, p-value < 2.2e-16 alternative hypothesis: two-sided 
+--------------------------------------
+
+Results for file: ./DistributedNumberGeneration/Output Files/RANDOM_TREE_proc3_stream.txt 
+
+ 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 432.23, df = 49, p-value < 2.2e-16 
+ 	Asymptotic one-sample Kolmogorov-Smirnov test  data:  jittered_numbers D = 0.085959, p-value < 2.2e-16 alternative hypothesis: two-sided 
+--------------------------------------
+

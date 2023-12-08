@@ -5,3 +5,5 @@
 /.vs
 /DistributedNumberGeneration/.vs/DistributedNumberGeneration
 /DistributedNumberGeneration/x64/Debug
+/.RData
+/.Rhistory
