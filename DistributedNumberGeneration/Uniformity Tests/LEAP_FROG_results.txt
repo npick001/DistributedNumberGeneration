@@ -1,24 +1,60 @@
-Results for file: ./DistributedNumberGeneration/Output Files/LEAP_FROG_proc0_stream.txt 
+Results for file: ./DistributedNumberGeneration/Output Files/LEAP_FROG_proc0_stream.txt
 
- 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 388.87, df = 49, p-value < 2.2e-16 
- 	Asymptotic one-sample Kolmogorov-Smirnov test  data:  jittered_numbers D = 0.083252, p-value < 2.2e-16 alternative hypothesis: two-sided 
+Frequency Test (Chi-Square Test):
+ 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 107.67, df = 99, p-value = 0.2592 
+
+Runs Test for Independence:
+ 	Runs Test  data:  jittered_numbers statistic = 0.98607, runs = 1528, n1 = 1500, n2 = 1500, n = 3000, p-value = 0.3241 alternative hypothesis: nonrandomness 
+
+Discrete Fourier Transform Test for Uniformity:
+Expected Discrepancy: 25270.2
+
+Blocking Test for Uniformity:
+Blocking Variance: 0.0002270258
+
 --------------------------------------
+Results for file: ./DistributedNumberGeneration/Output Files/LEAP_FROG_proc1_stream.txt
 
-Results for file: ./DistributedNumberGeneration/Output Files/LEAP_FROG_proc1_stream.txt 
+Frequency Test (Chi-Square Test):
+ 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 88.467, df = 99, p-value = 0.767 
 
- 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 365.47, df = 49, p-value < 2.2e-16 
- 	Asymptotic one-sample Kolmogorov-Smirnov test  data:  jittered_numbers D = 0.07771, p-value = 3.331e-16 alternative hypothesis: two-sided 
+Runs Test for Independence:
+ 	Runs Test  data:  jittered_numbers statistic = -0.94954, runs = 1475, n1 = 1500, n2 = 1500, n = 3000, p-value = 0.3423 alternative hypothesis: nonrandomness 
+
+Discrete Fourier Transform Test for Uniformity:
+Expected Discrepancy: 24689.21
+
+Blocking Test for Uniformity:
+Blocking Variance: 0.0002189436
+
 --------------------------------------
+Results for file: ./DistributedNumberGeneration/Output Files/LEAP_FROG_proc2_stream.txt
 
-Results for file: ./DistributedNumberGeneration/Output Files/LEAP_FROG_proc2_stream.txt 
+Frequency Test (Chi-Square Test):
+ 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 97.733, df = 99, p-value = 0.5171 
 
- 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 389.1, df = 49, p-value < 2.2e-16 
- 	Asymptotic one-sample Kolmogorov-Smirnov test  data:  jittered_numbers D = 0.077728, p-value = 3.331e-16 alternative hypothesis: two-sided 
+Runs Test for Independence:
+ 	Runs Test  data:  jittered_numbers statistic = -0.43825, runs = 1489, n1 = 1500, n2 = 1500, n = 3000, p-value = 0.6612 alternative hypothesis: nonrandomness 
+
+Discrete Fourier Transform Test for Uniformity:
+Expected Discrepancy: 24461.62
+
+Blocking Test for Uniformity:
+Blocking Variance: 0.0002860802
+
 --------------------------------------
+Results for file: ./DistributedNumberGeneration/Output Files/LEAP_FROG_proc3_stream.txt
 
-Results for file: ./DistributedNumberGeneration/Output Files/LEAP_FROG_proc3_stream.txt 
+Frequency Test (Chi-Square Test):
+ 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 81.867, df = 99, p-value = 0.8939 
 
- 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 421.6, df = 49, p-value < 2.2e-16 
- 	Asymptotic one-sample Kolmogorov-Smirnov test  data:  jittered_numbers D = 0.085154, p-value < 2.2e-16 alternative hypothesis: two-sided 
+Runs Test for Independence:
+ 	Runs Test  data:  jittered_numbers statistic = -0.91302, runs = 1476, n1 = 1500, n2 = 1500, n = 3000, p-value = 0.3612 alternative hypothesis: nonrandomness 
+
+Discrete Fourier Transform Test for Uniformity:
+Expected Discrepancy: 24722.94
+
+Blocking Test for Uniformity:
+Blocking Variance: 0.0001470721
+
 --------------------------------------
-

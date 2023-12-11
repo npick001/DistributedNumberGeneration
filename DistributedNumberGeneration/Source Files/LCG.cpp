@@ -1,6 +1,6 @@
 #include "LCG.h"
 
-LCG::LCG(int seed, int a, int c, int m)
+LCG::LCG(int seed, int a, unsigned long long c, unsigned long long m)
 {
     m_seed = seed;
 	m_a = a;
@@ -39,7 +39,7 @@ void LCG::WriteStreamToFile(int N, string filename) const
 
     for(auto pair : stream)
 	{
-		data += to_string((pair.second + 1.0) / 2.0) + '\n';
+		data += to_string(pair.second) + '\n';
 	}
 
 	file << data;
@@ -62,13 +62,14 @@ double LCG::GetNumber(int position) const
 
 vector<pair<int, double>> LCG::GetNumberStream(int N) const
 {
-    int x = m_seed;
+    long long x = m_seed;
     vector<pair<int, double>> stream;
 
     if (m_lag < 0) {
         for (int i = 0; i < N; i++) {
-            int current = (m_a * x + m_c) % m_m;
-            double real_number = static_cast<double>(current) / m_m;
+            unsigned long long current = (m_a * x + m_c) % m_m;
+
+            double real_number = static_cast<double>(current) / static_cast<double>(m_m);
 
             stream.push_back(make_pair(current, real_number));
             x = current;   
@@ -80,14 +81,14 @@ vector<pair<int, double>> LCG::GetNumberStream(int N) const
         for (int i = m_startingPosition; i < new_N; i++) {
             
             if (i % m_lag == m_startingPosition) {
-				int current = (m_a * x + m_c) % m_m;
+                unsigned long long current = (m_a * x + m_c) % m_m;
 				double real_number = static_cast<double>(current) / m_m;
 
 				stream.push_back(make_pair(current, real_number));
 				x = current;   
 			}
             else {
-                int current = (m_a * x + m_c) % m_m;
+                unsigned long long current = (m_a * x + m_c) % m_m;
                 x = current;
             }
         }
@@ -111,7 +112,7 @@ int LCG::GetIncrement() const
     return m_c;
 }
 
-int LCG::GetModulus() const
+long long LCG::GetModulus() const
 {
     return m_m;
 }

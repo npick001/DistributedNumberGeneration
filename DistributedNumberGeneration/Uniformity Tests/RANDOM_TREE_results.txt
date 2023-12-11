@@ -1,24 +1,75 @@
-Results for file: ./DistributedNumberGeneration/Output Files/RANDOM_TREE_proc0_stream.txt 
+Results for file: ./DistributedNumberGeneration/Output Files/RANDOM_TREE_proc0_stream.txt
 
- 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 430.3, df = 49, p-value < 2.2e-16 
- 	Asymptotic one-sample Kolmogorov-Smirnov test  data:  jittered_numbers D = 0.085628, p-value < 2.2e-16 alternative hypothesis: two-sided 
+Frequency Test (Chi-Square Test):
+ 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 94.333, df = 99, p-value = 0.6139 
+
+Runs Test for Independence:
+ 	Runs Test  data:  jittered_numbers statistic = -0.21913, runs = 1495, n1 = 1500, n2 = 1500, n = 3000, p-value = 0.8266 alternative hypothesis: nonrandomness 
+
+Discrete Fourier Transform Test for Uniformity:
+Expected Discrepancy: 24837.02
+
+Blocking Test for Uniformity:
+Blocking Variance: 0.0001559294
+
 --------------------------------------
+Results for file: ./DistributedNumberGeneration/Output Files/RANDOM_TREE_proc1_stream.txt
 
-Results for file: ./DistributedNumberGeneration/Output Files/RANDOM_TREE_proc1_stream.txt 
+Frequency Test (Chi-Square Test):
+ 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 94.067, df = 99, p-value = 0.6213 
 
- 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 430.87, df = 49, p-value < 2.2e-16 
- 	Asymptotic one-sample Kolmogorov-Smirnov test  data:  jittered_numbers D = 0.085958, p-value < 2.2e-16 alternative hypothesis: two-sided 
+Runs Test for Independence:
+ 	Runs Test  data:  jittered_numbers statistic = -0.1826, runs = 1496, n1 = 1500, n2 = 1500, n = 3000, p-value = 0.8551 alternative hypothesis: nonrandomness 
+
+Discrete Fourier Transform Test for Uniformity:
+Expected Discrepancy: 24841.4
+
+Blocking Test for Uniformity:
+Blocking Variance: 0.0001566741
+
 --------------------------------------
+Results for file: ./DistributedNumberGeneration/Output Files/RANDOM_TREE_proc2_stream.txt
 
-Results for file: ./DistributedNumberGeneration/Output Files/RANDOM_TREE_proc2_stream.txt 
+Frequency Test (Chi-Square Test):
+ 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 93.4, df = 99, p-value = 0.6399 
 
- 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 430.47, df = 49, p-value < 2.2e-16 
- 	Asymptotic one-sample Kolmogorov-Smirnov test  data:  jittered_numbers D = 0.085968, p-value < 2.2e-16 alternative hypothesis: two-sided 
+Runs Test for Independence:
+ 	Runs Test  data:  jittered_numbers statistic = -0.10956, runs = 1498, n1 = 1500, n2 = 1500, n = 3000, p-value = 0.9128 alternative hypothesis: nonrandomness 
+
+Discrete Fourier Transform Test for Uniformity:
+Expected Discrepancy: 24794.84
+
+Blocking Test for Uniformity:
+Blocking Variance: 0.0001601022
+
 --------------------------------------
+Results for file: ./DistributedNumberGeneration/Output Files/RANDOM_TREE_proc3_stream.txt
 
-Results for file: ./DistributedNumberGeneration/Output Files/RANDOM_TREE_proc3_stream.txt 
+Frequency Test (Chi-Square Test):
+ 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 94.133, df = 99, p-value = 0.6195 
 
- 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 432.23, df = 49, p-value < 2.2e-16 
- 	Asymptotic one-sample Kolmogorov-Smirnov test  data:  jittered_numbers D = 0.085959, p-value < 2.2e-16 alternative hypothesis: two-sided 
+Runs Test for Independence:
+ 	Runs Test  data:  jittered_numbers statistic = -0.073042, runs = 1499, n1 = 1500, n2 = 1500, n = 3000, p-value = 0.9418 alternative hypothesis: nonrandomness 
+
+Discrete Fourier Transform Test for Uniformity:
+Expected Discrepancy: 24573.95
+
+Blocking Test for Uniformity:
+Blocking Variance: 0.0001598597
+
 --------------------------------------
+Results for file: ./DistributedNumberGeneration/Output Files/RANDOM_TREE_serial_stream.txt
 
+Frequency Test (Chi-Square Test):
+ 	Chi-squared test for given probabilities  data:  bins$counts X-squared = 91.717, df = 99, p-value = 0.6855 
+
+Runs Test for Independence:
+ 	Runs Test  data:  jittered_numbers statistic = -1.7567, runs = 16226, n1 = 16384, n2 = 16384, n = 32768, p-value = 0.07896 alternative hypothesis: nonrandomness 
+
+Discrete Fourier Transform Test for Uniformity:
+Expected Discrepancy: 890059.2
+
+Blocking Test for Uniformity:
+Blocking Variance: 4.937074e-05
+
+--------------------------------------

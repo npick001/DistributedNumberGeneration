@@ -1,73 +1,45 @@
 #include "NumberGeneration.h"
 
-void RandomTreeGeneration()
+void RandomTreeGeneration(LCG left_generator, int stream_length, int processors)
 {
-	// create a vector of LCGs
-	// the new LCG's are created from the left_generator's numberstream as the
-	// seed and the multiplier is a^(COMM_WORLD_SIZE)
-	const int num_processors = 4;
-	vector<LCG*> generators;
-
-	// SERIAL RNG with LCG
-	int x0 = 917; // seed
-	int a = 65531; // multiplier
-	int c = 127; // increment
-	int m = static_cast<int>(2E22); // modulus
-	int N = 3000; // # of RN to generate
-
-	// create the left generator
-	LCG* left_generator = new LCG(x0, a, c, m);
-	auto left_stream = left_generator->GetNumberStream(N);
+	auto left_stream = left_generator.GetNumberStream(processors + 1);
 
 	// generate the right generators
-	for (int i = 0; i < num_processors; i++)
-	{
-		LCG* right_generator = new LCG(left_stream[i].first, a, c, m);
-		generators.push_back(right_generator);
-	}
-
-	// generate the random numbers from the right generators
-	for (int i = 0; i < num_processors; i++)
+	for (int i = 0; i < processors; i++)
 	{
 		string filename = "Output Files\\RANDOM_TREE_proc" + to_string(i) + "_stream.txt";
-		generators[i]->WriteStreamToFile(N, filename);
+		cout << "Creating generator " << i << " with seed " << left_stream[i].first << endl;
+
+		auto a = left_generator.GetMultiplier();
+		auto c = left_generator.GetIncrement();
+		auto m = left_generator.GetModulus();
+
+		LCG* right_generator = new LCG(left_stream[i].first, a, c, m);
+		right_generator->WriteStreamToFile(stream_length, filename);
+
+		delete right_generator;
 	}
 
 	cout << "Random Tree Generation Complete." << endl;
 }
 
-void LeapFrogGeneration()
+void LeapFrogGeneration(LCG left_generator, int stream_length, int processors)
 {
-	// create a new vector of LCG's
-	// the new LCG's are created from the left_generator's numberstream as the
-	// seed, but this method ensures no number overlap between the generators
-	const int num_processors = 4;
-	vector<LCG*> generators;
-
-	// SERIAL RNG with LCG
-	int x0 = 917; // seed
-	int a = 65531; // multiplier
-	int c = 127; // increment
-	int m = static_cast<int>(2E22); // modulus
-	int N = 3000; // # of RN to generate
-
-	// create the left generator
-	LCG* left_generator = new LCG(x0, a, c, m);
-	auto left_stream = left_generator->GetNumberStream(N);
+	auto left_stream = left_generator.GetNumberStream(processors + 1);
 
 	// generate the right generators using the leap frog method
-	for (int i = 0; i < num_processors; i++)
-	{
-		LCG* right_generator = new LCG(left_stream[i].first, a, c, m);
-		right_generator->SetGenerationLag(num_processors, i);
-		generators.push_back(right_generator);
-	}
-
-	// generate the random numbers from the right generators
-	for (int i = 0; i < num_processors; i++)
+	for (int i = 0; i < processors; i++)
 	{
 		string filename = "Output Files\\LEAP_FROG_proc" + to_string(i) + "_stream.txt";
-		generators[i]->WriteStreamToFile(N, filename);
+		auto a = left_generator.GetMultiplier();
+		auto c = left_generator.GetIncrement();
+		auto m = left_generator.GetModulus();
+
+		LCG* right_generator = new LCG(left_stream[i].first, a, c, m);
+		right_generator->SetGenerationLag(processors, i);
+		right_generator->WriteStreamToFile(stream_length, filename);
+
+		delete right_generator;
 	}
 
 	cout << "Leap Frog Generation Complete." << endl;

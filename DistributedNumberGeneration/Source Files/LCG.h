@@ -44,7 +44,7 @@ void WriteToFile(string filename, T data, int openMode) {
 class LCG
 {
 public:
-	LCG(int seed, int a, int c, int m);
+	LCG(int seed, int a, unsigned long long c, unsigned long long m);
 	LCG(LCG& other);
 
 	void WriteStreamToFile(int N, string filename) const;
@@ -56,15 +56,15 @@ public:
 	int GetSeed() const;
 	int GetMultiplier() const;
 	int GetIncrement() const;
-	int GetModulus() const;
+	long long GetModulus() const;
 
 	bool operator==(const LCG& other) const;
 	bool operator!=(const LCG& other) const;
 
 private:
 	int m_a;
-	int m_c;
-	int m_m;
+	unsigned long long m_c;
+	unsigned long long m_m;
 	int m_N;
 	int m_seed;
 
